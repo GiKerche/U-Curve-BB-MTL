@@ -1,0 +1,7 @@
+numpy
+pandas
+scikit-learn
+optuna
+matplotlib
+PyYAML
+scipy
