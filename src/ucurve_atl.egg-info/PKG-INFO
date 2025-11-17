@@ -1,0 +1,85 @@
+Metadata-Version: 2.4
+Name: ucurve_atl
+Version: 0.1.0
+Summary: A package for Auxiliary Task Learning using U-Curve Combinatorial Optimization.
+Author-email: Seu Nome <seu.email@example.com>
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scikit-learn
+Requires-Dist: optuna>=3.0.0
+Dynamic: license-file
+
+# U-Curve Auxiliary Task Learning (ucurve-atl)
+
+[![PyPI version](https://badge.fury.io/py/ucurve-atl.svg)](https://badge.fury.io/py/ucurve-atl)
+
+Este pacote implementa um algoritmo de seleção de tarefas auxiliares baseado na otimização combinatória em Curva-U, conforme descrito na tese "Otimização Combinatória em Curva-U para aprendizado com tarefas auxiliares (ATL)".
+
+O objetivo é encontrar automaticamente a melhor combinação de tarefas-fonte e seus respectivos pesos para maximizar o desempenho de uma tarefa-alvo, sendo agnóstico ao modelo utilizado.
+
+## Principais Funcionalidades
+
+-   **Seleção Automática de Tarefas**: Encontra o subconjunto ideal de tarefas auxiliares para melhorar a generalização.
+-   **Otimização de Pesos**: Ajusta o peso de contribuição de cada tarefa-fonte.
+-   **Modelo Agnóstico**: Funciona com qualquer estimador compatível com a API do scikit-learn (para classificação ou regressão).
+-   **Busca Eficiente**: Utiliza uma estratégia de busca *branch-and-bound* para evitar a busca exaustiva, podando ramos não promissores.
+
+## Instalação
+
+Você pode instalar o pacote diretamente do PyPI:
+
+```bash
+pip install ucurve-atl
+```
+
+## Como Usar
+
+O uso é simples e segue o padrão do scikit-learn: `instanciar`, `.fit()` e `analisar os resultados`.
+
+```python
+from sklearn.linear_model import LogisticRegression
+from ucurve_atl import UcurveATLSelector
+# Importe aqui suas funções para carregar os dados
+# Ex: from my_data_loader import load_my_tasks
+
+# 1. Carregue seus dados
+# Os dados devem estar em dicionários no formato {nome_da_tarefa: dados}
+# X_tasks = {'task_A': X_A, 'task_B': X_B, 'task_C': X_C}
+# y_tasks = {'task_A': y_A, 'task_B': y_B, 'task_C': y_C}
+X_tasks, y_tasks = load_my_tasks()
+
+# 2. Defina o modelo e o espaço de busca de hiperparâmetros
+model = LogisticRegression(solver='lbfgs', penalty='l2')
+
+def param_space(trial):
+    return {
+        'C': trial.suggest_float('C', 1e-4, 1e4, log=True)
+    }
+
+# 3. Instancie e execute o seletor
+atl_selector = UcurveATLSelector(
+    estimator=model,
+    param_space=param_space,
+    scoring='roc_auc',
+    direction='maximize',
+    depth=3
+)
+
+# Defina a tarefa que você quer otimizar
+target = 'task_A'
+atl_selector.fit(X_tasks, y_tasks, target_task_name=target)
+
+# 4. Analise os resultados
+print(f"Melhor combinação de tarefas: {atl_selector.best_tasks_}")
+print(f"Melhor score de validação: {atl_selector.best_score_:.4f}")
+print(f"Pesos ótimos: {atl_selector.best_weights_}")
+
+# Veja o histórico completo da busca
+print(atl_selector.history_)
+```

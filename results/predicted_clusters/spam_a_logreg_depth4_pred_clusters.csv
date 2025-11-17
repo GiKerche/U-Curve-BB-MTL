@@ -1,0 +1,4 @@
+base_name,estimator,run_depth,target,task_id,pred_label,members,n_members
+spam_a,logreg,4,t0,t0,t0,t0,1
+spam_a,logreg,4,t1,t1,t0|t1,t1|t0,2
+spam_a,logreg,4,t2,t2,t0|t2,t2|t0,2

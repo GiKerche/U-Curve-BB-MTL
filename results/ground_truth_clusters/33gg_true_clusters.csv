@@ -1,0 +1,10 @@
+base_name,task_id,cluster_label,is_outlier
+33gg,t0,0,False
+33gg,t1,0,False
+33gg,t2,0,False
+33gg,t3,1,False
+33gg,t4,1,False
+33gg,t5,1,False
+33gg,t6,2,False
+33gg,t7,2,False
+33gg,t8,2,False

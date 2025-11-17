@@ -1,0 +1,16 @@
+base_name,estimator,run_depth,target,task_id,pred_label,members,n_members
+55gg,logreg,4,t0,t0,t0|t1|t2,t0|t1|t2,3
+55gg,logreg,4,t1,t1,t0|t1|t2|t5,t1|t0|t2|t5,4
+55gg,logreg,4,t10,t10,t10|t2|t9,t10|t9|t2,3
+55gg,logreg,4,t11,t11,t10|t11,t11|t10,2
+55gg,logreg,4,t12,t12,t0|t12|t13,t12|t13|t0,3
+55gg,logreg,4,t13,t13,t12|t13|t14|t5,t13|t14|t12|t5,4
+55gg,logreg,4,t14,t14,t13|t14|t6,t14|t13|t6,3
+55gg,logreg,4,t2,t2,t0|t1|t2|t8|t9,t2|t8|t1|t9|t0,5
+55gg,logreg,4,t3,t3,t3|t4|t5,t3|t5|t4,3
+55gg,logreg,4,t4,t4,t0|t1|t13|t3|t4,t4|t3|t13|t0|t1,5
+55gg,logreg,4,t5,t5,t3|t5,t5|t3,2
+55gg,logreg,4,t6,t6,t6|t7,t6|t7,2
+55gg,logreg,4,t7,t7,t13|t6|t7|t8,t7|t13|t6|t8,4
+55gg,logreg,4,t8,t8,t10|t6|t8|t9,t8|t10|t6|t9,4
+55gg,logreg,4,t9,t9,t0|t10|t11|t9,t9|t11|t10|t0,4

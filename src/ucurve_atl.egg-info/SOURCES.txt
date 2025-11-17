@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/u_curve_atl/__init__.py
+src/u_curve_atl/selector.py
+src/ucurve_atl.egg-info/PKG-INFO
+src/ucurve_atl.egg-info/SOURCES.txt
+src/ucurve_atl.egg-info/dependency_links.txt
+src/ucurve_atl.egg-info/requires.txt
+src/ucurve_atl.egg-info/top_level.txt

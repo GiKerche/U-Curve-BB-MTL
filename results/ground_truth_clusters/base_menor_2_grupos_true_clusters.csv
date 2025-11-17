@@ -1,0 +1,7 @@
+base_name,task_id,cluster_label,is_outlier
+base_menor_2_grupos,t0,0,False
+base_menor_2_grupos,t1,0,False
+base_menor_2_grupos,t2,0,False
+base_menor_2_grupos,t3,1,False
+base_menor_2_grupos,t4,1,False
+base_menor_2_grupos,t5,-1,True

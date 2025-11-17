@@ -1,0 +1,6 @@
+base_name,task_id,true_cluster,times_included,times_as_source,times_as_target,unique_pred_labels,total_combos,fraction_included
+3clusters_3outliers,t17,-1,2,1,1,2,20,0.1
+3clusters_3outliers,t18,-2,2,1,1,2,20,0.1
+3clusters_3outliers,t19,-3,3,2,1,3,20,0.15
+base_menor,t7,-1,1,0,1,1,8,0.125
+base_menor_2_grupos,t5,-1,1,0,1,1,6,0.16666666666666666
