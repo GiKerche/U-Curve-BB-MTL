@@ -1,7 +1,0 @@
-datasets:
-- t0
-- t1
-- t2
-location: mtl_real/spam_a/
-source: spam_a
-type: source

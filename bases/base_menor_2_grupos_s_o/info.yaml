@@ -1,0 +1,9 @@
+datasets:
+- t0
+- t1
+- t2
+- t3
+- t4
+location: dataset/base_menor_2_grupos_s_o/
+source: base_menor_2_grupos_s_o
+type: source

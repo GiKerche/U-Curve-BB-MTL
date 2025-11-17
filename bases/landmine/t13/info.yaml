@@ -1,0 +1,13 @@
+dataloader: plaincsv
+dataset: t13
+file: data.csv
+infos: {}
+outputs: 1
+problem: multiclass
+sampler: shuffle
+source: landmine
+testing:
+  testidx: indexes_holdout.dat
+  testtype: holdout
+  truetest: true
+  trutestidx: indexes_test.dat

@@ -1,0 +1,18 @@
+dataloader: plaincsv
+dataset: t2
+file: data.csv
+infos:
+  description: Spam Filtering Creativity Award - Task A/B.
+  extraction: Selected the 100 common features (that appears in all tasks) with maximal
+    mutual information in each task.
+  nclasses: 2
+  url: http://ecmlpkdd2006.org/challenge.html
+outputs: 1
+problem: multiclass
+sampler: shuffle
+source: spam_a
+testing:
+  testidx: indexes_holdout.dat
+  testtype: holdout
+  truetest: true
+  trutestidx: indexes_test.dat
